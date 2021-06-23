@@ -22,6 +22,7 @@ class TestActor extends Actor {
   }
 
   getData() {
+    // @ts-ignore
     const data = super.getData()
     const shields = data.itemsByType['shield']
     data.parry = 0
@@ -40,6 +41,7 @@ class TestActor extends Actor {
     if (target === 'data.advances.details') {
       editorOptions.toolbar = 'styleselect bullist hr table removeFormat code save '
     }
+    // @ts-ignore
     super._createEditor(target, editorOptions, initialContent)
   }
 
@@ -50,6 +52,7 @@ class TestActor extends Actor {
   }
 
   _getHeaderButtons() {
+    // @ts-ignore
     let buttons = super._getHeaderButtons()
     // Token Configuration
     //@ts-ignore
