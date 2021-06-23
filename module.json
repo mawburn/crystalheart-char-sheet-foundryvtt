@@ -1,32 +1,20 @@
 {
-  "name": "crystalheart-char-sheet",
-  "title": "Crystal Heart SWADE Character Sheet",
-  "description": "A Crystal Heart specific SWADE Character Sheet",
-  "authors": [
+  "name": "gAudioBundle-5",
+  "title": "Game Audio Bundle 4",
+  "description": "<p>High-quality sound effects from many of the best sound recordists and designers in the World. Use them personally or commercially without attribution. Sonniss LTD.</p>",
+  "version": "2.4",
+  "minimumCoreVersion": "0.5.0",
+  "compatibleCoreVersion": "0.8.0",
+  "author": "DatDamnZotz [DatDamnZotz#7962]",
+  "packs": [
     {
-      "name": "hypnoCode",
-      "discord": "hypnoCode#4242"
+      "name": "Game Audio Bundle 4 - Playlists 1",
+      "label": "Game Audio Bundle 4 - Playlists 1",
+      "path": "/packs/playlist1.db",
+      "entity": "Playlist"
     }
   ],
-  "version": "0.0.1",
-  "minimumCoreVersion": "0.7.9",
-  "compatibleCoreVersion": "0.7.9",
-  "manifestPlusVersion": "1.0.0",
-  "url": "",
-  "manifest": "",
-  "download": "",
-  "type": "module",
-  "includes": [
-    "./assets/**",
-    "./dist/**",
-    "./templates/**",
-    "./module.json",
-    "./README.md"
-  ],
-  "scripts": [
-    "dist/bundle.js"
-  ],
-  "styles": [
-    "dist/chswade.css"
-  ]
+  "url": "https://github.com/datdamnzotz/FoundryVTT-Game-Audio-Bundle-4",
+  "manifest": "https://raw.githubusercontent.com/datdamnzotz/FoundryVTT-Game-Audio-Bundle-4/master/module.json",
+  "download": "https://github.com/datdamnzotz/FoundryVTT-Game-Audio-Bundle-4/releases/download/v2.4/v2.4.zip"
 }
