@@ -16,5 +16,5 @@
     "types": ["@league-of-foundry-developers/foundry-vtt-types"]
   },
   "exclude": ["node_modules"],
-  "include": ["swadetypes/*", "src/index.ts"]
+  "include": ["src/index.ts"]
 }

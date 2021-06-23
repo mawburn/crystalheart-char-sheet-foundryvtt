@@ -46,8 +46,8 @@
   "private": false,
   "repository": "git@github.com:mawburn/crystalheart-char-sheet-foundryvtt.git",
   "scripts": {
-    "build": "NODE_ENV=production webpack --config webpack.prod.js",
-    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "NODE_ENV=production webpack",
+    "start": "webpack --watch",
     "test": "npx jest"
   },
   "version": "0.0.1"

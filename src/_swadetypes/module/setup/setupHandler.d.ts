@@ -1,3 +1,3 @@
 export declare class SwadeSetup {
-    static setup(): Promise<void>;
+  static setup(): Promise<void>
 }

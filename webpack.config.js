@@ -6,7 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: path.resolve(__dirname, 'src', 'index.ts'),
   mode: 'development',
   devtool: 'source-map',
   optimization: {
@@ -52,9 +52,11 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new ForkTsCheckerWebpackPlugin(),
-    new CopyPlugin({
-      patterns: [{ from: 'src/assets', to: path.resolve(__dirname, 'assets') }],
-    }),
+    // new CopyPlugin({
+    //   patterns: [
+    //     { from: path.resolve(__dirname, 'src', 'assets'), to: path.resolve(__dirname, 'assets') },
+    //   ],
+    // }),
     new ESLintPlugin({
       extensions: ['.ts'],
       exclude: 'node_modules',
