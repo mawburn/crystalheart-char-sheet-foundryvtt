@@ -7,7 +7,7 @@ const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.ts'),
-  mode: 'development',
+  mode: 'production',
   devtool: 'source-map',
   optimization: {
     usedExports: true,
@@ -31,7 +31,7 @@ module.exports = {
       {
         test: /\.(scss)$/,
         use: [
-          process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           'css-loader',
           {
             loader: 'sass-loader',

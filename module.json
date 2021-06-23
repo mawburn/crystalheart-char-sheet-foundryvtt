@@ -12,9 +12,6 @@
   "minimumCoreVersion": "0.8.7",
   "compatibleCoreVersion": "0.8.7",
   "manifestPlusVersion": "1.0.0",
-  "url": "",
-  "manifest": "",
-  "download": "",
   "type": "module",
   "includes": [
     "./assets/**",
@@ -23,7 +20,7 @@
     "./module.json",
     "./README.md"
   ],
-  "scripts": [
+  "esmodules": [
     "dist/bundle.js"
   ],
   "styles": [

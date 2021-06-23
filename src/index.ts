@@ -3,7 +3,7 @@ import './index.scss'
 import CharacterSheet from './sheet/CharacterSheet'
 
 Hooks.on('init', () => {
-  Actors.registerSheet('crystalheart-swade-sheet', CharacterSheet, {
+  Actors.registerSheet('crystalheart-char-sheet', CharacterSheet, {
     types: ['character'],
     label: 'Crystal Heart Character Sheet',
   })

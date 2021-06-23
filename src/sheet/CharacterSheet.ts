@@ -3,7 +3,7 @@ import SwadeActor from '../_swadetypes/module/entities/SwadeActor'
 export default class CharacterSheet extends ActorSheet {
   static get defaultOptions() {
     return {
-      ...this.defaultOptions,
+      ...super.defaultOptions,
       classes: ['swade-official', 'sheet', 'actor'],
       width: 630,
       height: 700,
@@ -19,13 +19,13 @@ export default class CharacterSheet extends ActorSheet {
   }
 
   get template() {
-    return '/templates/official/sheet.html'
+    return 'modules/crystalheart-char-sheet/templates/sheet.html'
   }
 
   /**
    * @override
    */
   get actor(): SwadeActor {
-    return this.actor as SwadeActor
+    return super.actor as SwadeActor
   }
 }
