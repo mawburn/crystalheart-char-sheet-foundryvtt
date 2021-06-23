@@ -1,0 +1,22 @@
+{
+  "name": "crystalheart-char-sheet",
+  "title": "Crystal Heart SWADE Character Sheet",
+  "description": "A Crystal Heart specific SWADE Character Sheet",
+  "author": "mawburn <mawburn7@gmail.com>",
+  "version": "0.0.1",
+  "compatibleCoreVersion": "0.8.7",
+  "minimumCoreVersion": "0.8.7",
+  "systems": [
+    "swade"
+  ],
+  "scripts": [
+    "dist/bundle.js"
+  ],
+  "styles": [
+    "dist/chswade.css"
+  ],
+  "url": "https://github.com/mawburn/crystalheart-char-sheet-foundryvtt",
+  "bugs": "https://github.com/mawburn/crystalheart-char-sheet-foundryvtt/issues",
+  "manifest": "https://github.com/mawburn/crystalheart-char-sheet-foundryvtt/releases/latest/download/module.json",
+  "download": "https://github.com/mawburn/crystalheart-char-sheet-foundryvtt/releases/latest/download/module.zip"
+}
