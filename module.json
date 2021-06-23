@@ -2,12 +2,35 @@
   "name": "crystalheart-char-sheet",
   "title": "Crystal Heart SWADE Character Sheet",
   "description": "A Crystal Heart specific SWADE Character Sheet",
+  "authors": [
+    {
+      "name": "hypnoCode",
+      "discord": "hypnoCode#4242"
+    }
+  ],
   "version": "0.0.1",
-  "minimumCoreVersion": "0.7.9",
+  "minimumCoreVersion": "0.8.7",
   "compatibleCoreVersion": "0.8.7",
   "manifestPlusVersion": "1.0.0",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "type": "module",
+  "includes": [
+    "./assets/**",
+    "./dist/**",
+    "./templates/**",
+    "./module.json",
+    "./README.md"
+  ],
+  "scripts": [
+    "dist/bundle.js"
+  ],
+  "styles": [
+    "dist/chswade.css"
+  ],
   "url": "https://github.com/mawburn/crystalheart-char-sheet-foundryvtt",
-  "manifest": "https://raw.githubusercontent.com/mawburn/crystalheart-char-sheet-foundryvtt/test/module.json",
-  "download": "https://github.com/jakvike/luckpoints/archive/master.zip",
-  "type": "module"
+  "bugs": "https://github.com/mawburn/crystalheart-char-sheet-foundryvtt/issues",
+  "manifest": "https://github.com/mawburn/crystalheart-char-sheet-foundryvtt/releases/latest/download/module.json",
+  "download": "https://github.com/mawburn/crystalheart-char-sheet-foundryvtt/releases/latest/download/module.zip"
 }
