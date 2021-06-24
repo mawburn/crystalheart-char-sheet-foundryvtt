@@ -74,19 +74,19 @@
     border-bottom: 1px solid $colorPrimary !important;
 
     &,
-    label {
+    > div {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    label > span {
+    label {
       margin-right: 0.5rem;
       font-weight: 600;
       letter-spacing: 0.6px;
     }
 
-    label > span,
+    label,
     input[type='text'],
     input[type='number'] {
       padding: 0.5rem 0;

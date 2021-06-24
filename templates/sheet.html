@@ -18,33 +18,42 @@
       />
       <img
         class="chswade--header__swlogo"
-        src="modules/crystalheart-char-sheet/assets/swade-fan.png"
+        src="modules/crystalheart-char-sheet/assets/swade-fan.webp"
         alt="SWADE Fan Logo"
       />
     </div>
   </div>
   <div class="chswade--char-info">
-    <label>
-      <span>Homeland:</span>
+    <div>
+      <label for="chwade-land">Land:</label>
       <input
+        id="chswade-land"
         type="text"
         name="data.details.species.name"
         value="{{data.data.details.species.name}}"
         placeholder="Homeland"
       />
-    </label>
-    <label>
-      <span>{{localize 'SWADE.Rank'}}:</span>
+    </div>
+
+    <div>
+      <label for="chswade-rank">{{localize 'SWADE.Rank'}}:</label>
       <input
+        id="chswade-rank"
         type="text"
         name="data.advances.rank"
         value="{{data.data.advances.rank}}"
         placeholder="{{localize 'SWADE.Rank'}}"
       />
-    </label>
-    <label>
-      <span>{{localize 'SWADE.Adv'}}:</span>
-      <input type="number" name="data.advances.value" value="{{data.data.advances.value}}" />
-    </label>
+    </div>
+
+    <div>
+      <label for="chswade-adv">{{localize 'SWADE.Adv'}}:</label>
+      <input
+        id="chswade-adv"
+        type="number"
+        name="data.advances.value"
+        value="{{data.data.advances.value}}"
+      />
+    </div>
   </div>
 </form>
