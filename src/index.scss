@@ -37,14 +37,25 @@
     width: 100%;
 
     &-name {
-      font-size: 1rem;
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.42rem;
       padding-left: 1rem;
+      margin-right: 0.5rem;
+      font-weight: 700;
+    }
+
+    label {
+      border-bottom: 2px solid transparent !important;
+      margin-right: 0.5rem;
     }
 
     input[type='text'] {
       padding: 1rem 0;
-      font-size: 1.5rem;
       border-bottom: 2px solid transparent !important;
+      font-weight: 700;
 
       &:focus {
         border-bottom: 2px solid $colorPrimary !important;
