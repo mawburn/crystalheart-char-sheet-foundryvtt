@@ -4,7 +4,7 @@ export default class CharacterSheet extends ActorSheet {
   static get defaultOptions() {
     return {
       ...super.defaultOptions,
-      classes: ['swade-official', 'sheet', 'actor'],
+      classes: ['chswade'],
       width: 630,
       height: 700,
       resizable: true,
