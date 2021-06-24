@@ -1,19 +1,14 @@
 {
   "compilerOptions": {
-    "allowJs": false,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "inlineSourceMap": false,
+    "lib": ["DOM", "ES6", "ES2020"],
     "module": "esnext",
     "moduleResolution": "node",
-    "noEmit": true,
     "outDir": "./dist/",
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "target": "es5"
+    "sourceMap": true,
+    "target": "ES2020",
+    "types": ["@league-of-foundry-developers/foundry-vtt-types"]
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "types.d.ts", "**/*.ts"]
+  "include": ["src/index.ts"]
 }

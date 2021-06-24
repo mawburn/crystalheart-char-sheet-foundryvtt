@@ -1,3 +1,111 @@
+@import './vars';
+
 .chswade {
-  color: red;
+  &.window-app {
+    img {
+      border: 0;
+      border-radius: 0;
+    }
+
+    section.window-content {
+      background: $colorLight;
+    }
+  }
+
+  section {
+    *,
+    input[type='text'],
+    input[type='number'],
+    input[type='password'],
+    input[type='date'],
+    input[type='time'] {
+      color: $colorDark;
+      border: 0;
+      background: transparent;
+      border-radius: 0;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    &-name {
+      font-size: 1rem;
+      padding-left: 1rem;
+    }
+
+    input[type='text'] {
+      padding: 1rem 0;
+      font-size: 1.5rem;
+      border-bottom: 2px solid transparent !important;
+
+      &:focus {
+        border-bottom: 2px solid $colorPrimary !important;
+      }
+    }
+
+    &-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    &__chlogo {
+      width: 180px;
+      height: 33px;
+      margin-right: 10px;
+    }
+
+    &__swlogo {
+      width: 75px;
+      height: 45px;
+    }
+  }
+
+  &--char-info {
+    margin: 1rem 1rem 0;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid $colorPrimary !important;
+
+    &,
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    label > span {
+      margin-right: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+    }
+
+    label > span,
+    input[type='text'],
+    input[type='number'] {
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent !important;
+
+      &:focus {
+        border-bottom: 2px solid $colorPrimary !important;
+      }
+    }
+
+    input[type='text'] {
+      width: 150px;
+      min-width: 150px;
+    }
+
+    input[type='number'] {
+      width: 42px;
+      text-align: center;
+      padding: 0 0.5rem;
+    }
+  }
 }

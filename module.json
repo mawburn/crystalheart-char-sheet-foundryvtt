@@ -2,14 +2,25 @@
   "name": "crystalheart-char-sheet",
   "title": "Crystal Heart SWADE Character Sheet",
   "description": "A Crystal Heart specific SWADE Character Sheet",
-  "author": "mawburn <mawburn7@gmail.com>",
-  "version": "0.0.1",
-  "compatibleCoreVersion": "0.8.7",
-  "minimumCoreVersion": "0.8.7",
-  "systems": [
-    "swade"
+  "authors": [
+    {
+      "name": "hypnoCode",
+      "discord": "hypnoCode#4242"
+    }
   ],
-  "scripts": [
+  "version": "0.0.2",
+  "minimumCoreVersion": "0.8.7",
+  "compatibleCoreVersion": "0.8.7",
+  "manifestPlusVersion": "1.0.0",
+  "type": "module",
+  "includes": [
+    "./assets/**",
+    "./dist/**",
+    "./templates/**",
+    "./module.json",
+    "./README.md"
+  ],
+  "esmodules": [
     "dist/bundle.js"
   ],
   "styles": [

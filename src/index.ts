@@ -1,5 +1,18 @@
 import './index.scss'
 
-const x = 1
+import CharacterSheet from './sheet/CharacterSheet'
 
-export default x
+Hooks.on('init', () => {
+  Actors.registerSheet('crystalheart-char-sheet', CharacterSheet, {
+    types: ['character'],
+    label: 'Crystal Heart Character Sheet',
+  })
+
+  preloadHandlebarsTemplates()
+})
+
+async function preloadHandlebarsTemplates() {
+  const templatePaths = ['modules/crystalheart-char-sheet/templates/sheet.html']
+
+  return loadTemplates(templatePaths)
+}
