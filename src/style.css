@@ -1,0 +1,29 @@
+.chswade.window-app img {
+  border: 0;
+  border-radius: 0;
+}
+
+.chswade.window-app section.window-content {
+  background: #fdfdfd;
+}
+
+.chswade section *,
+.chswade section input[type='text'],
+.chswade section input[type='number'],
+.chswade section input[type='password'],
+.chswade section input[type='date'],
+.chswade section input[type='time'] {
+  color: #242424;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+.chswade section *:focus,
+.chswade section input[type='text']:focus,
+.chswade section input[type='number']:focus,
+.chswade section input[type='password']:focus,
+.chswade section input[type='date']:focus,
+.chswade section input[type='time']:focus {
+  box-shadow: none;
+}

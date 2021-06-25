@@ -1,5 +1,8 @@
 {
+  "extends": "@tsconfig/svelte/tsconfig.json",
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "importsNotUsedAsValues": "remove",
     "inlineSourceMap": false,
     "lib": ["DOM", "ES6", "ES2020"],
     "module": "esnext",
@@ -7,8 +10,10 @@
     "outDir": "./dist/",
     "sourceMap": true,
     "target": "ES2020",
-    "types": ["@league-of-foundry-developers/foundry-vtt-types"]
+    "strict": true,
+    "noImplicitAny": false,
+    "types": ["@league-of-foundry-developers/foundry-vtt-types", "svelte"]
   },
-  "exclude": ["node_modules"],
-  "include": ["src/index.ts"]
+  "include": ["src/**/*", "src/node_modules/**/*"],
+  "exclude": ["node_modules/*", "__sapper__/*", "static/*"]
 }

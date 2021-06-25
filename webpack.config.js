@@ -2,13 +2,18 @@ const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
+
+const sveltePreprocess = require('svelte-preprocess')
+const CopyPlugin = require('copy-webpack-plugin')
+
+const mode = process.env.NODE_ENV || 'development'
+const prod = mode === 'production'
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.ts'),
-  mode: 'production',
-  devtool: 'source-map',
+  mode,
+  devtool: false,
   optimization: {
     usedExports: true,
   },
@@ -19,47 +24,60 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts?$/,
+        test: /\.ts$/,
+        loader: 'ts-loader',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.svelte$/,
         use: {
-          loader: 'ts-loader',
+          loader: 'svelte-loader',
           options: {
-            transpileOnly: true,
+            compilerOptions: {
+              dev: !prod,
+            },
+            emitCss: prod,
+            hotReload: !prod,
+            preprocess: sveltePreprocess({ sourceMap: !prod }),
           },
         },
       },
       {
-        test: /\.(scss)$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-        ],
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        // required to prevent errors from Svelte on Webpack 5+
+        test: /node_modules\/svelte\/.*\.mjs$/,
+        resolve: {
+          fullySpecified: false,
+        },
       },
     ],
   },
   resolve: {
-    extensions: ['.ts'],
+    alias: {
+      svelte: path.dirname(require.resolve('svelte/package.json')),
+    },
+    extensions: ['.mjs', '.js', '.ts', '.svelte'],
+    mainFields: ['svelte', 'browser', 'module', 'main'],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'chswade.css',
+      filename: path.resolve(__dirname, 'src', 'style.css'),
     }),
     new CleanWebpackPlugin(),
     new ForkTsCheckerWebpackPlugin(),
-    // new CopyPlugin({
-    //   patterns: [
-    //     { from: path.resolve(__dirname, 'src', 'assets'), to: path.resolve(__dirname, 'assets') },
-    //   ],
-    // }),
-    new ESLintPlugin({
-      extensions: ['.ts'],
-      exclude: 'node_modules',
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src', 'style.css'),
+          to: path.resolve(__dirname, 'dist', 'chswade.css'),
+        },
+      ],
     }),
   ],
+  devServer: {
+    hot: true,
+  },
 }

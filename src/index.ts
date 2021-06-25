@@ -1,6 +1,4 @@
-import './index.scss'
-
-import CharacterSheet from './sheet/CharacterSheet'
+import CharacterSheet from './CharacterSheet'
 
 Hooks.on('init', () => {
   Actors.registerSheet('crystalheart-char-sheet', CharacterSheet, {

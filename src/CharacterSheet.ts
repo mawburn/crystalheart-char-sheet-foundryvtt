@@ -1,4 +1,5 @@
-import SwadeActor from '../_swadetypes/module/entities/SwadeActor'
+import SwadeActor from './_swadetypes/module/entities/SwadeActor'
+import Sheet from './sheet/Sheet.svelte'
 
 export default class CharacterSheet extends ActorSheet {
   static get defaultOptions() {
@@ -27,5 +28,16 @@ export default class CharacterSheet extends ActorSheet {
    */
   get actor(): SwadeActor {
     return super.actor as SwadeActor
+  }
+
+  activateListeners() {
+    const sheet = new Sheet({
+      target: document.querySelector(`#${super.id} .chswade-sheet`)!,
+      props: {
+        actor: (super.actor as SwadeActor).data,
+      },
+    })
+
+    return sheet
   }
 }

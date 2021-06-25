@@ -181,7 +181,7 @@ export interface VehicleCommon {
     hasQuick: boolean
   }
 }
-interface CharacterActorData extends Actor.Data<CharacterCommon, SysItemData> {
+export interface CharacterActorData extends Actor.Data<CharacterCommon, SysItemData> {
   type: 'character'
 }
 interface NpcActorData extends Actor.Data<CharacterCommon, SysItemData> {

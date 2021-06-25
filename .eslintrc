@@ -1,10 +1,11 @@
 {
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "extraFileExtensions": [".svelte"]
   },
   "extends": ["prettier"],
-  "plugins": ["prettier", "import"],
+  "plugins": ["svelte3", "prettier", "import"],
   "rules": {
     "arrow-body-style": ["error", "as-needed"],
     "eqeqeq": ["error", "always"],
@@ -20,9 +21,16 @@
     "no-var": "error"
   },
   "env": {
+    "es6": true,
     "browser": true,
-    "node": true
+    "node": false
   },
+  "overrides": [
+    {
+      "files": ["*.svelte"],
+      "processor": "svelte3/svelte3"
+    }
+  ],
   "settings": {
     "import/extensions": [".js", ".ts"]
   }
