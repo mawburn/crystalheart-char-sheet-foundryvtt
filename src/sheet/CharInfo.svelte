@@ -35,9 +35,7 @@
 
 <style>
   .chswade-charInfo {
-    margin: 1rem 1rem 0;
-    padding-bottom: 0.25rem;
-    border-bottom: 1px solid #182347 !important;
+    margin: 0 1rem;
   }
 
   .chswade-charInfo,

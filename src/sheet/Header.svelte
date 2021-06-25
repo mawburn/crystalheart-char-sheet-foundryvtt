@@ -64,6 +64,7 @@
     display: flex;
     align-items: flex-end;
     margin: 0.5rem 0.5rem;
+    margin-top: 0;
   }
 
   .chswade-chlogo {

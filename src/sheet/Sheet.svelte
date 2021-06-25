@@ -1,6 +1,7 @@
 <script lang="ts">
   import Header from './Header.svelte'
   import CharInfo from './CharInfo.svelte'
+  import Status from './Status.svelte'
 
   export let actor: Actor
 
@@ -14,6 +15,12 @@
   rank={data?.advances?.rank}
   advances={data?.advances?.value}
 />
+<Status />
+
+<main>x</main>
 
 <style>
+  main {
+    display: flex;
+  }
 </style>
