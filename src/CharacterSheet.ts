@@ -16,6 +16,7 @@ export default class CharacterSheet extends ActorSheet {
           initial: 'summary',
         },
       ],
+      submitOnChange: true,
     }
   }
 
@@ -30,7 +31,9 @@ export default class CharacterSheet extends ActorSheet {
     return super.actor as SwadeActor
   }
 
-  activateListeners() {
+  activateListeners(html: JQuery) {
+    super.activateListeners(html)
+
     const sheet = new Sheet({
       target: document.querySelector(`#${super.id} .chswade-sheet`)!,
       props: {

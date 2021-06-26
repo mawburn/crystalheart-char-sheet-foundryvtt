@@ -35,6 +35,7 @@ module.exports = {
             compilerOptions: {
               dev: !prod,
             },
+            emitCss: false,
             hotReload: !prod,
             preprocess: sveltePreprocess({ sourceMap: !prod }),
           },

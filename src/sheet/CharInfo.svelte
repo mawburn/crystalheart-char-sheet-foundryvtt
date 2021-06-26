@@ -79,4 +79,8 @@
     text-align: center;
     padding: 0 0.5rem;
   }
+
+  select {
+    appearance: none;
+  }
 </style>

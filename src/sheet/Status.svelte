@@ -1,14 +1,31 @@
 <script lang="ts">
+  import StatusBox from './StatusBox.svelte'
+
+  export let wounds: number = 0
+  export let fatigue: number = 0
+  export let parry: number = 0
+  export let toughness: [number, number] = [0, 0]
+  export let status: any = null
 </script>
 
 <div class="chswade-status">
   <div class="chswade-status-effect">
     <h2>Wounds</h2>
-    <div class="chswade-status-counter chswade-wound-count">0/3</div>
+    <div class="chswade-status-counter chswade-wound-count">
+      <input type="number" name="data.wounds.value" value={wounds} min="0" max="4" />/3
+    </div>
   </div>
   <div class="chswade-statuses">
     <ul>
-      <li>Shaken</li>
+      <li>
+        <StatusBox
+          text="Shaken"
+          altText="Shook"
+          name="data.status.isShaken"
+          toggled={status?.isShaken}
+          color="#f7d23d"
+        />
+      </li>
       <li>Distracted</li>
       <li>Vulnerable</li>
     </ul>
@@ -20,19 +37,23 @@
   </div>
   <div class="chswade-status-effect">
     <h2>Fatigue</h2>
-    <div class="chswade-status-counter chswade-fatigue-count">0/2</div>
+    <div class="chswade-status-counter chswade-fatigue-count">
+      <input type="number" name="data.fatigue.value" value={fatigue} min="0" max="2" />/2
+    </div>
   </div>
   <div class="chswade-status-effect">
     <h2>Parry</h2>
-    <div class="chswade-status-counter chswade-derived">7</div>
+    <div class="chswade-status-counter chswade-derived">
+      <div class="chswade-parry">{parry}</div>
+    </div>
   </div>
   <div class="chswade-status-effect">
     <h2>Toughness</h2>
     <div class="chswade-status-counter chswade-derived">
-      <div>18</div>
+      <div>{toughness[0]}</div>
       <span
         style="background: url('modules/crystalheart-char-sheet/assets/shield.svg') center / contain no-repeat"
-        >10</span
+        >{toughness[1]}</span
       >
     </div>
   </div>
@@ -94,6 +115,11 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
 
+  .chswade-status-counter input[type='number'] {
+    width: auto;
+    margin-right: -10px;
+  }
+
   .chswade-wound-count {
     background: url('modules/crystalheart-char-sheet/assets/wounds.png') center / contain no-repeat;
   }
@@ -115,5 +141,9 @@
     font-size: 1rem;
     margin-left: 5px;
     margin-right: -5px;
+  }
+
+  .chswade-parry {
+    margin-left: -3px;
   }
 </style>
