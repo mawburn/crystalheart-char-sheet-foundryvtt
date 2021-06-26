@@ -2,6 +2,7 @@
   export let land: string = ''
   export let rank: string = ''
   export let advances: number = 0
+  export let size: number = 0
 </script>
 
 <div class="chswade-charInfo">
@@ -17,14 +18,19 @@
   </div>
 
   <div>
+    <label for="chwade-size">Size:</label>
+    <input id="chswade-size" type="number" name="data.stats.size" value={size} placeholder="Size" />
+  </div>
+
+  <div>
     <label for="chswade-rank">Rank:</label>
-    <input
-      id="chswade-rank"
-      type="text"
-      name="data.advances.rank"
-      value={rank}
-      placeholder="Rank"
-    />
+    <select id="chswade-rank" value={rank} name="data.advances.rank">
+      <option value="Novice">Novice</option>
+      <option value="Seasoned">Seasoned</option>
+      <option value="Veteran">Veteran</option>
+      <option value="Heroic">Heroic</option>
+      <option value="Legendary">Legendary</option>
+    </select>
   </div>
 
   <div>
@@ -64,8 +70,8 @@
   }
 
   input[type='text'] {
-    width: 150px;
-    min-width: 150px;
+    width: 100px;
+    min-width: 100px;
   }
 
   input[type='number'] {

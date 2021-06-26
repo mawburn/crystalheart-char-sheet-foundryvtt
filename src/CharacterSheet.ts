@@ -1,4 +1,4 @@
-import SwadeActor from './_swadetypes/module/entities/SwadeActor'
+import SwadeActor from './_swadeTypes/module/entities/SwadeActor'
 import Sheet from './sheet/Sheet.svelte'
 
 export default class CharacterSheet extends ActorSheet {
@@ -34,7 +34,7 @@ export default class CharacterSheet extends ActorSheet {
     const sheet = new Sheet({
       target: document.querySelector(`#${super.id} .chswade-sheet`)!,
       props: {
-        actor: (super.actor as SwadeActor).data,
+        actor: super.actor as SwadeActor,
       },
     })
 

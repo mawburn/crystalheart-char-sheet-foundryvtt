@@ -1,4 +1,5 @@
-<script lang="ts"></script>
+<script lang="ts">
+</script>
 
 <div class="chswade-status">
   <div class="chswade-status-effect">
@@ -22,12 +23,18 @@
     <div class="chswade-status-counter chswade-fatigue-count">0/2</div>
   </div>
   <div class="chswade-status-effect">
-    <h3>Parry</h3>
+    <h2>Parry</h2>
     <div class="chswade-status-counter chswade-derived">7</div>
   </div>
   <div class="chswade-status-effect">
-    <h3>Toughness</h3>
-    <div class="chswade-status-counter chswade-derived">8(1)</div>
+    <h2>Toughness</h2>
+    <div class="chswade-status-counter chswade-derived">
+      <div>18</div>
+      <span
+        style="background: url('modules/crystalheart-char-sheet/assets/shield.svg') center / contain no-repeat"
+        >10</span
+      >
+    </div>
   </div>
 </div>
 
@@ -64,16 +71,11 @@
     font-size: 1rem;
   }
 
-  h2,
-  h3 {
+  h2 {
     margin: 0;
     padding: 0;
-    margin-bottom: -5px;
     font-weight: 700;
-  }
-
-  h3 {
-    margin-bottom: 0;
+    margin-bottom: -3px;
   }
 
   .chswade-status-effect {
@@ -86,9 +88,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
-    width: 75px;
-    height: 75px;
+    font-size: 1.75rem;
+    width: 100px;
+    height: 100px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
 
@@ -101,7 +103,17 @@
   }
 
   .chswade-derived {
-    font-size: 1.25rem;
-    background: url('modules/crystalheart-char-sheet/assets/stats.webp') center / contain no-repeat;
+    background: url('modules/crystalheart-char-sheet/assets/circle.png') center / contain no-repeat;
+  }
+
+  .chswade-derived span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+    margin-left: 5px;
+    margin-right: -5px;
   }
 </style>

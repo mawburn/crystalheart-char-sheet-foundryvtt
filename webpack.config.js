@@ -2,7 +2,6 @@ const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const ESLintPlugin = require('eslint-webpack-plugin')
 
 const sveltePreprocess = require('svelte-preprocess')
 const CopyPlugin = require('copy-webpack-plugin')
@@ -36,7 +35,6 @@ module.exports = {
             compilerOptions: {
               dev: !prod,
             },
-            emitCss: prod,
             hotReload: !prod,
             preprocess: sveltePreprocess({ sourceMap: !prod }),
           },
@@ -63,9 +61,6 @@ module.exports = {
     mainFields: ['svelte', 'browser', 'module', 'main'],
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: path.resolve(__dirname, 'src', 'style.css'),
-    }),
     new CleanWebpackPlugin(),
     new ForkTsCheckerWebpackPlugin(),
     new CopyPlugin({
@@ -75,6 +70,9 @@ module.exports = {
           to: path.resolve(__dirname, 'dist', 'chswade.css'),
         },
       ],
+    }),
+    new MiniCssExtractPlugin({
+      filename: path.resolve(__dirname, 'dist', 'chswade.css'),
     }),
   ],
   devServer: {

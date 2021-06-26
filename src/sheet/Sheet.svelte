@@ -2,19 +2,13 @@
   import Header from './Header.svelte'
   import CharInfo from './CharInfo.svelte'
   import Status from './Status.svelte'
+  import type SwadeActor from '../_swadeTypes/module/entities/SwadeActor'
 
-  export let actor: Actor
-
-  let data = actor?.data?.data
-  let details = data?.details
+  export let actor: SwadeActor
 </script>
 
 <Header name={actor.name} />
-<CharInfo
-  land={details?.species?.name}
-  rank={data?.advances?.rank}
-  advances={data?.advances?.value}
-/>
+<CharInfo land={'xyz'} rank={'Novice'} advances={1} size={0} />
 <Status />
 
 <main>x</main>
